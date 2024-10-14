@@ -1,25 +1,19 @@
-#Tic-Tac-Toe Game using Python
 import pygame
 import sys
 
-# Initialize Pygame
 pygame.init()
 
-# Constants
 WINDOW_SIZE = 300
 GRID_SIZE = 100
 LINE_WIDTH = 5
 
-# Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 LINE_COLOR = (0, 0, 0)
 
-# Set up the display
 screen = pygame.display.set_mode((WINDOW_SIZE, WINDOW_SIZE))
 pygame.display.set_caption('Tic Tac Toe')
 
-# Set up the game state
 game_board = [[' ' for _ in range(3)] for _ in range(3)]
 current_player = 'X'
 
@@ -52,7 +46,6 @@ def draw_o(row, col):
                        GRID_SIZE // 2 - offset, LINE_WIDTH)
 
 
-# Main game loop
 running = True
 game_over = False
 
@@ -77,7 +70,6 @@ while running:
                 else:
                     current_player = 'O' if current_player == 'X' else 'X'
 
-    # Draw symbols
     for row in range(3):
         for col in range(3):
             if game_board[row][col] == 'X':
